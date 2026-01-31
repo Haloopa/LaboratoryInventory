@@ -1,59 +1,224 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laboratory Inventory Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Deskripsi
+Laboratory Inventory Management System adalah aplikasi berbasis web yang dikembangkan menggunakan framework Laravel. Aplikasi ini digunakan untuk mengelola inventaris laboratorium Teknologi Informasi dan Komunikasi (TIK), termasuk manajemen barang dengan gambar, peminjaman, persetujuan (approval), serta pengelolaan pengguna dengan sistem role dan hak akses.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🔐 Manajemen User & Role
+- Manajemen pengguna (CRUD user)
+- Sistem role & permission menggunakan Spatie Laravel Permission
+- Role utama:
+  - Super Admin
+  - Admin
+- Role user dengan dua profil:
+  - Dosen (dengan profil NIP)
+  - Mahasiswa (dengan profil NIM)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🖼️ Manajemen Inventory dengan Gambar
+- Pengelolaan data inventaris barang laboratorium
+- Upload gambar untuk setiap barang inventaris
+- Gambar disimpan dalam storage dengan optimasi
+- Preview gambar sebelum upload
+- Format gambar yang didukung: JPG, PNG, GIF (max 2MB)
+- Monitoring ketersediaan barang dengan visual yang jelas
 
-## Learning Laravel
+### 🔄 Peminjaman & Approval System
+- Pengajuan peminjaman barang oleh user (Dosen/Mahasiswa)
+- Keranjang peminjaman dengan sistem session
+- Proses approval peminjaman oleh Admin/Super Admin
+- Monitoring status peminjaman barang secara real-time
+- Validasi stok sebelum peminjaman
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 📊 Dashboard Multi-role
+- Dashboard overview untuk Admin & Super Admin
+- Dashboard user (Dosen & Mahasiswa)
+- Ringkasan data inventory dan peminjaman
+- Aktivitas terbaru user
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 📦 Keranjang Peminjaman
+- Sistem keranjang dengan session
+- Update jumlah barang di keranjang
+- Validasi stok saat penambahan ke keranjang
+- Submit peminjaman dalam satu klik
 
-## Laravel Sponsors
+### ✅ Approval Management
+- Daftar pengajuan peminjaman yang pending
+- Approve/Reject peminjaman dengan validasi stok
+- Update status peminjaman secara otomatis
+- Notifikasi perubahan status
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 📆 Pengembalian Barang
+- Konfirmasi pengembalian barang
+- Update tanggal kembali otomatis/manual
+- Pengembalian stok ke inventory
+- Riwayat pengembalian lengkap
 
-### Premium Partners
+### 📄 Surat Peminjaman
+- Upload surat pendukung peminjaman
+- Download template surat
+- Manajemen surat yang sudah diupload
+- Penyimpanan file menggunakan storage Laravel
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 👤 Profil Pengguna
+- Halaman profil pengguna
+- Update data profil sesuai role
+- Update password dengan validasi
 
-## Contributing
+### 🔍 Pencarian & Filter
+- Pencarian barang berdasarkan nama
+- Filter riwayat peminjaman
+- Filter berdasarkan role dan tanggal
+- Pagination untuk data yang banyak
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## Teknologi & Versi
+- Laravel Framework: 12.38.1
+- PHP: 8.3.25
+- Database: MySQL (MariaDB 10.4.25)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## Requirement Sistem
+- PHP >= 8.3
+- Composer
+- Node.js & NPM
+- Database MySQL
+- Web Server (Apache / Nginx / Laravel Built-in Server)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## Instalasi & Setup
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. Clone repository
+```bash
+git clone https://github.com/Haloopa/LaboratoryInventory.git
+cd LaboratoryInventory
+````
+
+2. Install dependensi backend
+
+```bash
+composer install
+```
+
+3. Install dependensi frontend
+
+```bash
+npm install
+```
+
+4. Konfigurasi environment
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+5. Konfigurasi database
+   Sesuaikan pengaturan database pada file `.env`:
+
+```env
+DB_DATABASE=laboratory_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+6. Migrasi database & seeder
+
+```bash
+php artisan migrate --seed
+```
+
+7. Storage Symbolic link
+
+```bash
+php artisan storage:link
+```
+
+8. Jalankan asset frontend
+
+```bash
+npm run dev
+```
+
+9. Jalankan server aplikasi
+
+```bash
+php artisan serve
+```
+
+10. Akses aplikasi melalui:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+## Akun Default (Seeder)
+
+Akun berikut tersedia secara default melalui database seeder:
+
+| Role        | Email                                                   | Password |
+| ----------- | ------------------------------------------------------- | -------- |
+| Super Admin | [superadmin@example.com](mailto:superadmin@example.com) | password |
+| Admin       | [admin@example.com](mailto:admin@example.com)           | password |
+| Dosen       | [dosen@example.com](mailto:dosen@example.com)           | password |
+| Mahasiswa   | [mahasiswa@example.com](mailto:mahasiswa@example.com)   | password |
+
+> ⚠️ Segera ganti password setelah login pertama!
+
+---
+
+## Struktur Folder
+
+```text
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/     # Controller aplikasi
+│   │   ├── Middleware/      # Middleware (auth, role, dll)
+│   │   └── Requests/        # Form request validation
+│   ├── Models/              # Model Eloquent
+│   └── Providers/           # Service providers
+│
+├── bootstrap/               # File bootstrap framework
+│
+├── config/                  # File konfigurasi aplikasi
+│
+├── database/
+│   ├── migrations/          # File migrasi database
+│   ├── seeders/             # Seeder akun default & role
+│   └── factories/           # Factory model
+│
+├── public/
+│   ├── css/                 # File CSS aplikasi
+│   ├── js/                  # File JavaScript aplikasi
+│   └── storage/             # Storage publik (symlink)
+│
+├── resources/
+│   └── views/               # Blade templates
+│
+├── routes/
+│   ├── web.php              # Route aplikasi web
+│   └── api.php              # Route API (jika digunakan)
+│
+├── storage/
+│   ├── app/                 # File upload (surat peminjaman) dan gambar alat
+│   ├── framework/           # Cache & session
+│   └── logs/                # Log aplikasi
+│
+├── tests/                   # Unit & feature test
+│
+├── vendor/                  # Dependensi composer
+│
+├── .env                     # Konfigurasi environment
+├── composer.json            # Konfigurasi Composer
+├── package.json             # Konfigurasi NPM
+├── vite.config.js           # Konfigurasi Vite
+└── README.md                # Dokumentasi project
+```
+
